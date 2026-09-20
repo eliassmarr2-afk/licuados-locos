@@ -1,0 +1,193 @@
+/* PRODUCT DETAIL — reference-driven override
+   This file intentionally affects only producto.html. */
+
+body {
+  background: #ededed;
+}
+
+.product-screen {
+  width: min(100%, 430px);
+  margin: 0 auto;
+  padding: 12px 12px 30px;
+}
+
+.product-screen__hero {
+  position: relative;
+  z-index: 2;
+  height: 342px;
+  overflow: hidden;
+  border-radius: 12px 12px 28px 28px;
+  background: var(--accent);
+}
+
+.product-screen__topbar {
+  position: absolute;
+  z-index: 4;
+  inset: 14px 14px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.square-control {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.square-control--menu {
+  gap: 3px;
+}
+
+.square-control--menu span {
+  width: 3px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.product-screen__visual {
+  position: absolute;
+  inset: 64px 26px 24px;
+  display: grid;
+  place-items: center;
+}
+
+.product-screen__visual img {
+  display: block;
+  width: min(62%, 220px);
+  height: min(82%, 230px);
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.product-screen__body {
+  position: relative;
+  z-index: 3;
+  margin-top: -18px;
+  padding: 40px 18px 18px;
+  border-radius: 0 0 12px 12px;
+  background: #ffffff;
+}
+
+.floating-favorite {
+  position: absolute;
+  z-index: 5;
+  top: -22px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: #ffffff;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.product-screen__heading {
+  padding-right: 46px;
+}
+
+.product-screen__heading h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+
+.product-screen__heading p {
+  margin: 7px 0 0;
+  color: #727272;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.product-screen__price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 21px 0 24px;
+}
+
+.product-screen__price-row > strong {
+  font-size: 23px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+}
+
+.quantity-control--detail {
+  grid-template-columns: 28px 28px 28px;
+  min-height: 29px;
+  border-radius: 6px;
+  background: var(--accent);
+}
+
+.quantity-control--detail button,
+.quantity-control--detail span {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.product-about h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.product-about p {
+  margin: 0;
+  color: #5f5f5f;
+  font-size: 12px;
+  line-height: 1.58;
+}
+
+.add-to-order {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 27px;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+@media (max-width: 360px) {
+  .product-screen {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+
+  .product-screen__hero {
+    height: 322px;
+  }
+
+  .product-screen__visual img {
+    width: min(64%, 205px);
+    height: min(80%, 215px);
+  }
+}
+
+@media (min-width: 720px) {
+  .product-screen {
+    width: 430px;
+    padding-top: 22px;
+  }
+}
