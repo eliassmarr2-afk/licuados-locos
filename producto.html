@@ -12,25 +12,32 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="product-detail-shell" data-product-page>
-    <section class="product-hero">
-      <img class="product-hero__image" id="productImage" src="" alt="">
-      <div class="product-hero__topbar">
-        <a class="hero-button" href="index.html" aria-label="Volver al inicio">‹</a>
-        <button class="hero-button" type="button" aria-label="Más opciones">⋮</button>
+  <main class="product-screen" data-product-page>
+    <section class="product-screen__hero">
+      <div class="product-screen__topbar">
+        <a class="square-control" href="index.html" aria-label="Volver al inicio">‹</a>
+        <button class="square-control square-control--menu" type="button" aria-label="Más opciones">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="product-screen__visual">
+        <img id="productImage" src="" alt="">
       </div>
     </section>
 
-    <section class="product-detail-card">
-      <button class="product-detail-card__favorite" type="button" aria-label="Agregar a favoritos">♥</button>
+    <section class="product-screen__body">
+      <button class="floating-favorite" type="button" aria-label="Agregar a favoritos">♥</button>
 
-      <p class="product-detail__tag" id="productKind">Clásico</p>
-      <h1 id="productName">Licuado</h1>
-      <p class="product-detail__subtitle" id="productSubtitle">Licuado clásico</p>
+      <div class="product-screen__heading">
+        <h1 id="productName">Licuado</h1>
+        <p id="productSubtitle">Licuado clásico</p>
+      </div>
 
-      <div class="product-detail__buy-row">
-        <strong class="product-detail__price" id="productPrice">$0</strong>
-        <div class="quantity-control" aria-label="Cantidad">
+      <div class="product-screen__price-row">
+        <strong id="productPrice">$0</strong>
+
+        <div class="quantity-control quantity-control--detail" aria-label="Cantidad">
           <button id="quantityMinus" type="button" aria-label="Restar uno">−</button>
           <span id="quantityValue">1</span>
           <button id="quantityPlus" type="button" aria-label="Sumar uno">+</button>
@@ -42,10 +49,7 @@
         <p id="productDescription"></p>
       </div>
 
-      <button class="add-to-cart" type="button">Agregar al pedido</button>
-      <p class="product-note">
-        El color de esta interfaz pertenece al producto y queda listo para ser reemplazado por el valor que entregue Protocol Data.
-      </p>
+      <button class="add-to-order" type="button">Agregar al pedido</button>
     </section>
   </main>
 
