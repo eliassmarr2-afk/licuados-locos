@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ededed">
+  <title>Licuados Locos</title>
+  <meta name="description" content="Licuados frescos, simples y combinados.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="home-header">
+      <div class="brand-row">
+        <a class="brand" href="index.html" aria-label="Licuados Locos, inicio">
+          <span class="brand-mark">LL</span>
+          <span>Licuados Locos</span>
+        </a>
+        <button class="icon-button" type="button" aria-label="Abrir menú">⋮</button>
+      </div>
+
+      <label class="search-box">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="searchInput" type="search" placeholder="Buscar licuado" autocomplete="off">
+      </label>
+
+      <nav class="category-strip" aria-label="Sabores">
+        <button class="category-chip is-active" type="button" data-filter="todos">
+          <span class="category-emoji">🥤</span><span>Todos</span>
+        </button>
+        <button class="category-chip" type="button" data-filter="banana">
+          <span class="category-emoji">🍌</span><span>Banana</span>
+        </button>
+        <button class="category-chip" type="button" data-filter="frutilla">
+          <span class="category-emoji">🍓</span><span>Frutilla</span>
+        </button>
+        <button class="category-chip" type="button" data-filter="sandia">
+          <span class="category-emoji">🍉</span><span>Sandía</span>
+        </button>
+        <button class="category-chip" type="button" data-filter="durazno">
+          <span class="category-emoji">🍑</span><span>Durazno</span>
+        </button>
+        <button class="category-chip" type="button" data-filter="manzana">
+          <span class="category-emoji">🍏</span><span>Manzana</span>
+        </button>
+        <button class="category-chip" type="button" data-filter="uvas">
+          <span class="category-emoji">🍇</span><span>Uvas</span>
+        </button>
+      </nav>
+    </header>
+
+    <section class="ad-banner ad-banner--primary" aria-label="Espacio publicitario">
+      <div>
+        <span class="eyebrow">ESPACIO PUBLICITARIO</span>
+        <strong>Banner principal</strong>
+        <small>Preparado para campañas, promos o contenido de Protocol Data.</small>
+      </div>
+      <span class="banner-size">1200 × 360</span>
+    </section>
+
+    <section class="catalog-section" aria-labelledby="clasicosTitle">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">LICUADOS</span>
+          <h1 id="clasicosTitle">Clásicos</h1>
+        </div>
+        <span class="section-price">desde $8.890</span>
+      </div>
+      <div class="product-grid" id="classicGrid"></div>
+    </section>
+
+    <section class="ad-banner" aria-label="Espacio publicitario">
+      <div>
+        <span class="eyebrow">ESPACIO PUBLICITARIO</span>
+        <strong>Banner entre secciones</strong>
+        <small>El contenido final puede reemplazarse sin tocar el catálogo.</small>
+      </div>
+      <span class="banner-size">1200 × 300</span>
+    </section>
+
+    <section class="catalog-section" aria-labelledby="combinadosTitle">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">MEZCLAS</span>
+          <h2 id="combinadosTitle">Combinados</h2>
+        </div>
+        <span class="section-price">$9.230</span>
+      </div>
+      <div class="product-grid" id="comboGrid"></div>
+    </section>
+
+    <p class="empty-state" id="emptyState" hidden>No encontramos licuados con esa búsqueda.</p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
