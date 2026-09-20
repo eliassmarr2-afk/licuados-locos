@@ -5,8 +5,8 @@ const PRODUCTS = [
     category: "frutilla",
     kind: "Clásico",
     price: 8890,
-    accent: "#ef7f91",
-    soft: "#f8cbd2",
+    accent: "#ec7f8a",
+    soft: "#f3b9c0",
     image: "https://images.unsplash.com/photo-1560536914-61692ef17082?auto=format&fit=crop&w=900&q=82",
     description: "Frutilla, leche y hielo. Fresco, suave y bien frutal."
   },
@@ -16,8 +16,8 @@ const PRODUCTS = [
     category: "banana",
     kind: "Clásico",
     price: 8890,
-    accent: "#e9bd45",
-    soft: "#f6e8ac",
+    accent: "#e8bd49",
+    soft: "#f4df91",
     image: "https://images.unsplash.com/photo-1685967836529-b0e8d6938227?auto=format&fit=crop&w=900&q=82",
     description: "Banana madura, leche y hielo para una textura cremosa."
   },
@@ -27,8 +27,8 @@ const PRODUCTS = [
     category: "sandia",
     kind: "Clásico",
     price: 8890,
-    accent: "#ef5f68",
-    soft: "#f7c5c8",
+    accent: "#ed6771",
+    soft: "#f2aab0",
     image: "https://images.unsplash.com/photo-1683531658992-b78c311900a3?auto=format&fit=crop&w=900&q=82",
     description: "Sandía bien fría, hielo y una mezcla liviana y refrescante."
   },
@@ -39,7 +39,7 @@ const PRODUCTS = [
     kind: "Clásico",
     price: 8890,
     accent: "#ee9b64",
-    soft: "#f7d6bf",
+    soft: "#f4c59f",
     image: "https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=900&q=82",
     description: "Durazno, leche y hielo con una base cremosa y fresca."
   },
@@ -49,8 +49,8 @@ const PRODUCTS = [
     category: "manzana",
     kind: "Clásico",
     price: 8890,
-    accent: "#80b85a",
-    soft: "#d8e9c9",
+    accent: "#7eb95b",
+    soft: "#b8d79f",
     image: "https://images.unsplash.com/photo-1610970881699-44a5587cabec?auto=format&fit=crop&w=900&q=82",
     description: "Manzana fresca, hielo y una combinación suave y equilibrada."
   },
@@ -60,8 +60,8 @@ const PRODUCTS = [
     category: "uvas",
     kind: "Clásico",
     price: 8890,
-    accent: "#9369ad",
-    soft: "#ded0e7",
+    accent: "#9568ad",
+    soft: "#cdb5da",
     image: "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=900&q=82",
     description: "Uvas, hielo y una base fresca con perfil naturalmente dulce."
   },
@@ -71,8 +71,8 @@ const PRODUCTS = [
     category: "frutilla banana",
     kind: "Combinado",
     price: 9230,
-    accent: "#e9858e",
-    soft: "#f5ccd0",
+    accent: "#df8a83",
+    soft: "#efb9b4",
     image: "https://images.unsplash.com/photo-1587501578729-2d1b41255ce4?auto=format&fit=crop&w=900&q=82",
     description: "Frutilla y banana en una mezcla cremosa, dulce y equilibrada."
   },
@@ -82,8 +82,8 @@ const PRODUCTS = [
     category: "sandia durazno",
     kind: "Combinado",
     price: 9230,
-    accent: "#ef806c",
-    soft: "#f7d0c8",
+    accent: "#ed846c",
+    soft: "#f3b8a8",
     image: "https://images.unsplash.com/photo-1502741224143-90386d7f8c82?auto=format&fit=crop&w=900&q=82",
     description: "Una combinación fresca de sandía y durazno con mucho sabor."
   },
@@ -93,8 +93,8 @@ const PRODUCTS = [
     category: "manzana uvas",
     kind: "Combinado",
     price: 9230,
-    accent: "#768f63",
-    soft: "#d9e0d2",
+    accent: "#788f64",
+    soft: "#b8c8aa",
     image: "https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&w=900&q=82",
     description: "Manzana y uvas con un perfil fresco, dulce y ligeramente ácido."
   }
@@ -106,27 +106,30 @@ const money = new Intl.NumberFormat("es-AR", {
   maximumFractionDigits: 0
 });
 
-function productCard(product) {
+function productRow(product) {
   return (
-    '<a class="product-card" ' +
-      'href="producto.html?producto=' + encodeURIComponent(product.id) + '" ' +
+    '<article class="product-row" ' +
       'data-search="' + (product.name + " " + product.category).toLowerCase() + '" ' +
       'data-category="' + product.category.toLowerCase() + '" ' +
-      'style="--product-accent:' + product.accent + ';--product-soft:' + product.soft + ';" ' +
-      'aria-label="Ver ' + product.name + '">' +
-      '<div class="product-card__content">' +
-        '<span class="product-card__tag">' + product.kind + '</span>' +
-        '<h3>' + product.name + '</h3>' +
-        '<p>' + product.description + '</p>' +
-        '<div class="product-card__footer">' +
-          '<span class="product-card__price">' + money.format(product.price) + '</span>' +
-          '<span class="product-card__action">Ver</span>' +
+      'style="--product-accent:' + product.accent + ';--product-soft:' + product.soft + ';">' +
+      '<div class="product-row__content">' +
+        '<a class="product-row__copy" href="producto.html?producto=' + encodeURIComponent(product.id) + '" aria-label="Ver ' + product.name + '">' +
+          '<h3>' + product.name + '</h3>' +
+          '<p>' + product.description + '</p>' +
+        '</a>' +
+        '<div class="product-row__footer">' +
+          '<span class="product-row__price">' + money.format(product.price) + '</span>' +
+          '<div class="quantity-control" aria-label="Cantidad de ' + product.name + '">' +
+            '<button class="row-quantity-minus" type="button" aria-label="Restar uno" data-product="' + product.id + '">−</button>' +
+            '<span class="row-quantity-value" data-product="' + product.id + '">1</span>' +
+            '<button class="row-quantity-plus" type="button" aria-label="Sumar uno" data-product="' + product.id + '">+</button>' +
+          '</div>' +
         '</div>' +
       '</div>' +
-      '<div class="product-card__media">' +
+      '<a class="product-row__media" href="producto.html?producto=' + encodeURIComponent(product.id) + '" aria-label="Ver ' + product.name + '">' +
         '<img src="' + product.image + '" alt="' + product.name + '" loading="lazy">' +
-      '</div>' +
-    '</a>'
+      '</a>' +
+    '</article>'
   );
 }
 
@@ -137,30 +140,57 @@ function initHome() {
 
   classicGrid.innerHTML = PRODUCTS
     .filter(function (product) { return product.kind === "Clásico"; })
-    .map(productCard)
+    .map(productRow)
     .join("");
 
   comboGrid.innerHTML = PRODUCTS
     .filter(function (product) { return product.kind === "Combinado"; })
-    .map(productCard)
+    .map(productRow)
     .join("");
 
   const searchInput = document.querySelector("#searchInput");
   const filterButtons = Array.from(document.querySelectorAll("[data-filter]"));
   const emptyState = document.querySelector("#emptyState");
+  const quantities = {};
   let activeFilter = "todos";
+
+  PRODUCTS.forEach(function (product) {
+    quantities[product.id] = 1;
+  });
+
+  function renderRowQuantity(productId) {
+    const value = document.querySelector('.row-quantity-value[data-product="' + productId + '"]');
+    if (value) value.textContent = quantities[productId];
+  }
+
+  document.addEventListener("click", function (event) {
+    const minus = event.target.closest(".row-quantity-minus");
+    const plus = event.target.closest(".row-quantity-plus");
+
+    if (minus) {
+      const productId = minus.dataset.product;
+      quantities[productId] = Math.max(1, quantities[productId] - 1);
+      renderRowQuantity(productId);
+    }
+
+    if (plus) {
+      const productId = plus.dataset.product;
+      quantities[productId] += 1;
+      renderRowQuantity(productId);
+    }
+  });
 
   function applyFilters() {
     const query = searchInput.value.trim().toLowerCase();
     let visible = 0;
 
-    document.querySelectorAll(".product-card").forEach(function (card) {
-      const matchesSearch = !query || card.dataset.search.includes(query);
+    document.querySelectorAll(".product-row").forEach(function (row) {
+      const matchesSearch = !query || row.dataset.search.includes(query);
       const matchesCategory =
-        activeFilter === "todos" || card.dataset.category.includes(activeFilter);
+        activeFilter === "todos" || row.dataset.category.includes(activeFilter);
       const show = matchesSearch && matchesCategory;
 
-      card.hidden = !show;
+      row.hidden = !show;
       if (show) visible += 1;
     });
 
@@ -172,9 +202,11 @@ function initHome() {
   filterButtons.forEach(function (button) {
     button.addEventListener("click", function () {
       activeFilter = button.dataset.filter;
+
       filterButtons.forEach(function (item) {
         item.classList.remove("is-active");
       });
+
       button.classList.add("is-active");
       applyFilters();
     });
@@ -194,10 +226,12 @@ function initProductDetail() {
   document.documentElement.style.setProperty("--accent", product.accent);
   document.documentElement.style.setProperty("--accent-soft", product.soft);
 
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  if (themeColor) themeColor.setAttribute("content", product.accent);
+
   document.title = product.name + " | Licuados Locos";
   document.querySelector("#productImage").src = product.image;
   document.querySelector("#productImage").alt = product.name;
-  document.querySelector("#productKind").textContent = product.kind;
   document.querySelector("#productName").textContent = product.name;
   document.querySelector("#productSubtitle").textContent =
     product.kind === "Combinado" ? "Licuado combinado" : "Licuado clásico";
