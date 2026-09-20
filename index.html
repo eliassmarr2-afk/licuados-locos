@@ -1,99 +1,204 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ededed">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ededed" />
+  <meta name="description" content="Licuados Locos — licuados frescos, simples y combinados." />
   <title>Licuados Locos</title>
-  <meta name="description" content="Licuados frescos, simples y combinados.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260920-1810">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css?v=20260920-1238" />
+  <link rel="stylesheet" href="css/home.css?v=20260920-1238" />
 </head>
-<body>
-  <main class="storefront-shell">
-    <header class="catalog-hero">
-      <div class="catalog-search-row">
-        <label class="catalog-search">
-          <input id="searchInput" type="search" placeholder="Buscar licuado" autocomplete="off">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <path d="m21 21-4.35-4.35m1.35-5.15a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z"/>
-          </svg>
+<body class="home-page">
+  <div class="app-shell">
+    <header class="home-header">
+      <div class="location-row">
+        <details id="homeMenu" class="home-menu-native">
+          <summary class="menu-button" aria-label="Abrir menú">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16"/>
+            </svg>
+          </summary>
+
+          <aside class="home-menu-panel" aria-labelledby="menuTitle">
+            <div class="side-menu__top">
+              <div>
+                <span class="side-menu__eyebrow">LICUADOS LOCOS</span>
+                <h2 id="menuTitle">Menú</h2>
+              </div>
+              <button id="closeMenuButton" class="side-menu__close" type="button" aria-label="Cerrar menú">×</button>
+            </div>
+
+            <nav class="side-menu__nav" aria-label="Menú de Licuados Locos">
+              <a class="side-menu__primary-link" href="index.html">Inicio</a>
+
+              <div class="side-menu__group side-menu__group--static">
+                <div class="side-menu__group-title">Categorías</div>
+                <div id="menuCategories" class="side-menu__subnav"></div>
+              </div>
+
+              <a class="side-menu__primary-link" href="seguimiento.html">Rastreá tu compra</a>
+              <a class="side-menu__primary-link" href="soporte.html">Contactá con soporte</a>
+
+              <div class="side-menu__group side-menu__group--static">
+                <div class="side-menu__group-title">Políticas</div>
+                <div class="side-menu__subnav">
+                  <button type="button" data-menu-placeholder="Política de privacidad">Privacidad</button>
+                  <button type="button" data-menu-placeholder="Política de envío">Envíos</button>
+                  <button type="button" data-menu-placeholder="Política de devolución">Devoluciones</button>
+                  <button type="button" data-menu-placeholder="Política de compra">Compra</button>
+                </div>
+              </div>
+            </nav>
+
+            <div class="side-menu__footer">
+              <span>Licuados frescos para disfrutar.</span>
+              <strong>Licuados Locos</strong>
+            </div>
+          </aside>
+        </details>
+
+        <div class="location-copy">
+          <span class="micro-label">Ubicación</span>
+          <button class="location-button" type="button" aria-label="Cambiar ubicación">
+            <span class="pin-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 21s6-5.2 6-11a6 6 0 1 0-12 0c0 5.8 6 11 6 11Z"/><circle cx="12" cy="10" r="2.2"/></svg>
+            </span>
+            <span>Buenos Aires, Argentina</span>
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5"/></svg>
+          </button>
+        </div>
+
+        <button class="notification-button" type="button" aria-label="Notificaciones">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M10 21h4"/></svg>
+          <span class="notification-dot" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="search-row">
+        <label class="search-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+          <input id="searchInput" type="search" placeholder="Buscar productos, categorías..." autocomplete="off" />
         </label>
 
-        <button class="menu-button" type="button" aria-label="Más opciones">
-          <span></span><span></span><span></span>
+        <button id="filterButton" class="filter-button" type="button" aria-label="Abrir filtros">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h10"/><path d="M18 7h2"/><circle cx="16" cy="7" r="2"/>
+            <path d="M4 17h2"/><path d="M10 17h10"/><circle cx="8" cy="17" r="2"/>
+          </svg>
         </button>
       </div>
-
-      <nav class="fruit-categories" aria-label="Sabores de licuados">
-        <button class="fruit-category is-active" type="button" data-filter="todos">
-          <span class="fruit-category__icon">🥤</span>
-          <span class="fruit-category__label">Todos</span>
-        </button>
-        <button class="fruit-category" type="button" data-filter="banana">
-          <span class="fruit-category__icon">🍌</span>
-          <span class="fruit-category__label">Banana</span>
-        </button>
-        <button class="fruit-category" type="button" data-filter="frutilla">
-          <span class="fruit-category__icon">🍓</span>
-          <span class="fruit-category__label">Frutilla</span>
-        </button>
-        <button class="fruit-category" type="button" data-filter="sandia">
-          <span class="fruit-category__icon">🍉</span>
-          <span class="fruit-category__label">Sandía</span>
-        </button>
-        <button class="fruit-category" type="button" data-filter="durazno">
-          <span class="fruit-category__icon">🍑</span>
-          <span class="fruit-category__label">Durazno</span>
-        </button>
-        <button class="fruit-category" type="button" data-filter="manzana">
-          <span class="fruit-category__icon">🍏</span>
-          <span class="fruit-category__label">Manzana</span>
-        </button>
-        <button class="fruit-category" type="button" data-filter="uvas">
-          <span class="fruit-category__icon">🍇</span>
-          <span class="fruit-category__label">Uvas</span>
-        </button>
-      </nav>
     </header>
 
-    <section class="ad-slot" aria-label="Espacio publicitario">
-      <span>ESPACIO PUBLICITARIO</span>
-      <strong>Banner destacado</strong>
-    </section>
-
-    <section class="catalog-block" aria-labelledby="classicTitle">
-      <div class="catalog-heading">
-        <div>
-          <span class="catalog-kicker">LICUADOS</span>
-          <h1 id="classicTitle">Clásicos</h1>
+    <main class="home-main">
+      <section class="categories-section" aria-labelledby="categoriesTitle">
+        <div class="section-heading">
+          <h2 id="categoriesTitle">Categorías</h2>
+          <button id="resetCategories" class="see-all-button" type="button">Ver todas</button>
         </div>
-        <span class="catalog-heading__price">$8.890</span>
-      </div>
-      <div class="product-list" id="classicGrid"></div>
-    </section>
+        <div id="categoriesTrack" class="categories-track" aria-label="Categorías"></div>
+      </section>
 
-    <section class="ad-slot ad-slot--compact" aria-label="Espacio publicitario">
-      <span>ESPACIO PUBLICITARIO</span>
-      <strong>Banner entre secciones</strong>
-    </section>
-
-    <section class="catalog-block" aria-labelledby="comboTitle">
-      <div class="catalog-heading">
-        <div>
-          <span class="catalog-kicker">COMBINADOS</span>
-          <h2 id="comboTitle">Mezclas</h2>
+      <section class="products-section" aria-labelledby="featuredTitle">
+        <div class="section-heading">
+          <h2 id="featuredTitle">Destacados</h2>
+          <button class="see-all-button" type="button" data-reset-view>Ver todos</button>
         </div>
-        <span class="catalog-heading__price">$9.230</span>
+        <div id="productsGrid" class="product-rail"></div>
+      </section>
+
+      <section class="products-section nearby-section" aria-labelledby="nearbyTitle">
+        <div class="section-heading">
+          <h2 id="nearbyTitle">Más elegidos</h2>
+          <button class="see-all-button" type="button" data-category-jump="combinados">Ver combos</button>
+        </div>
+        <div id="nearbyGrid" class="nearby-list"></div>
+      </section>
+
+      <div id="emptyState" class="empty-state" hidden>
+        <div class="empty-state__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+        </div>
+        <h3>No encontramos productos</h3>
+        <p>Probá con otra búsqueda o quitá los filtros.</p>
+        <button id="clearFilters" class="primary-button" type="button">Limpiar filtros</button>
       </div>
-      <div class="product-list" id="comboGrid"></div>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Navegación principal">
+      <a class="bottom-nav__item is-active" href="index.html" aria-current="page">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+        <span>Inicio</span>
+      </a>
+
+      <button class="bottom-nav__item" type="button" data-placeholder-tab="Novedades">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.1 5.1L19 10l-4.9 1.9L12 17l-2.1-5.1L5 10l4.9-1.9L12 3Z"/></svg>
+        <span>Novedades</span>
+      </button>
+
+      <a class="bottom-nav__item cart-nav-item" href="carrito.html">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14l-1 12H6L5 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span>Carrito</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+
+      <button class="bottom-nav__item" type="button" data-category-jump="combinados">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16v11H4z"/><path d="M8 8V5h8v3"/><path d="M9 13h6"/></svg>
+        <span>Combos</span>
+      </button>
+
+      <a class="bottom-nav__item" href="ingresar.html">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+        <span>Ingresar</span>
+      </a>
+    </nav>
+  </div>
+
+  <div id="filterSheet" class="sheet-backdrop" hidden>
+    <section class="filter-sheet" role="dialog" aria-modal="true" aria-labelledby="filterTitle">
+      <div class="sheet-handle"></div>
+      <div class="sheet-heading">
+        <h2 id="filterTitle">Filtros</h2>
+        <button id="closeFilters" class="sheet-close" type="button" aria-label="Cerrar filtros">×</button>
+      </div>
+
+      <fieldset class="filter-group">
+        <legend>Precio máximo</legend>
+        <div class="price-options">
+          <button type="button" class="chip is-selected" data-price="all">Todos</button>
+          <button type="button" class="chip" data-price="50000">Hasta $50.000</button>
+          <button type="button" class="chip" data-price="100000">Hasta $100.000</button>
+          <button type="button" class="chip" data-price="200000">Hasta $200.000</button>
+        </div>
+      </fieldset>
+
+      <fieldset class="filter-group">
+        <legend>Entrega</legend>
+        <label class="toggle-row">
+          <span>
+            <strong>Entrega rápida</strong>
+            <small>Hasta 48 h estimadas.</small>
+          </span>
+          <input id="fastDeliveryFilter" type="checkbox" />
+        </label>
+      </fieldset>
+
+      <div class="sheet-actions">
+        <button id="resetFilters" class="secondary-button" type="button">Restablecer</button>
+        <button id="applyFilters" class="primary-button" type="button">Aplicar</button>
+      </div>
     </section>
+  </div>
 
-    <p class="empty-state" id="emptyState" hidden>No encontramos licuados con esa búsqueda.</p>
-  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-  <script src="app.js?v=20260920-1810"></script>
+  <script src="js/data/catalog.js?v=20260920-1238"></script>
+  <script src="js/data/cart-store.js?v=20260920-1238"></script>
+  <script src="js/home.js?v=20260920-1238"></script>
+  <script src="js/support-session-widget.js?v=20260920-1238"></script>
+  <!-- build:v=20260920-1238 -->
 </body>
 </html>
