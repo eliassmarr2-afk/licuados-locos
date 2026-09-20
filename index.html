@@ -12,84 +12,83 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="app-shell">
-    <header class="home-header">
-      <div class="brand-row">
-        <a class="brand" href="index.html" aria-label="Licuados Locos, inicio">
-          <span class="brand-mark">LL</span>
-          <span>Licuados Locos</span>
-        </a>
-        <button class="icon-button" type="button" aria-label="Abrir menú">⋮</button>
+  <main class="storefront-shell">
+    <header class="catalog-hero">
+      <div class="catalog-search-row">
+        <label class="catalog-search">
+          <input id="searchInput" type="search" placeholder="Buscar licuado" autocomplete="off">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="m21 21-4.35-4.35m1.35-5.15a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z"/>
+          </svg>
+        </label>
+
+        <button class="menu-button" type="button" aria-label="Más opciones">
+          <span></span><span></span><span></span>
+        </button>
       </div>
 
-      <label class="search-box">
-        <span class="search-icon" aria-hidden="true">⌕</span>
-        <input id="searchInput" type="search" placeholder="Buscar licuado" autocomplete="off">
-      </label>
-
-      <nav class="category-strip" aria-label="Sabores">
-        <button class="category-chip is-active" type="button" data-filter="todos">
-          <span class="category-emoji">🥤</span><span>Todos</span>
+      <nav class="fruit-categories" aria-label="Sabores de licuados">
+        <button class="fruit-category is-active" type="button" data-filter="todos">
+          <span class="fruit-category__icon">🥤</span>
+          <span class="fruit-category__label">Todos</span>
         </button>
-        <button class="category-chip" type="button" data-filter="banana">
-          <span class="category-emoji">🍌</span><span>Banana</span>
+        <button class="fruit-category" type="button" data-filter="banana">
+          <span class="fruit-category__icon">🍌</span>
+          <span class="fruit-category__label">Banana</span>
         </button>
-        <button class="category-chip" type="button" data-filter="frutilla">
-          <span class="category-emoji">🍓</span><span>Frutilla</span>
+        <button class="fruit-category" type="button" data-filter="frutilla">
+          <span class="fruit-category__icon">🍓</span>
+          <span class="fruit-category__label">Frutilla</span>
         </button>
-        <button class="category-chip" type="button" data-filter="sandia">
-          <span class="category-emoji">🍉</span><span>Sandía</span>
+        <button class="fruit-category" type="button" data-filter="sandia">
+          <span class="fruit-category__icon">🍉</span>
+          <span class="fruit-category__label">Sandía</span>
         </button>
-        <button class="category-chip" type="button" data-filter="durazno">
-          <span class="category-emoji">🍑</span><span>Durazno</span>
+        <button class="fruit-category" type="button" data-filter="durazno">
+          <span class="fruit-category__icon">🍑</span>
+          <span class="fruit-category__label">Durazno</span>
         </button>
-        <button class="category-chip" type="button" data-filter="manzana">
-          <span class="category-emoji">🍏</span><span>Manzana</span>
+        <button class="fruit-category" type="button" data-filter="manzana">
+          <span class="fruit-category__icon">🍏</span>
+          <span class="fruit-category__label">Manzana</span>
         </button>
-        <button class="category-chip" type="button" data-filter="uvas">
-          <span class="category-emoji">🍇</span><span>Uvas</span>
+        <button class="fruit-category" type="button" data-filter="uvas">
+          <span class="fruit-category__icon">🍇</span>
+          <span class="fruit-category__label">Uvas</span>
         </button>
       </nav>
     </header>
 
-    <section class="ad-banner ad-banner--primary" aria-label="Espacio publicitario">
-      <div>
-        <span class="eyebrow">ESPACIO PUBLICITARIO</span>
-        <strong>Banner principal</strong>
-        <small>Preparado para campañas, promos o contenido de Protocol Data.</small>
-      </div>
-      <span class="banner-size">1200 × 360</span>
+    <section class="ad-slot" aria-label="Espacio publicitario">
+      <span>ESPACIO PUBLICITARIO</span>
+      <strong>Banner destacado</strong>
     </section>
 
-    <section class="catalog-section" aria-labelledby="clasicosTitle">
-      <div class="section-heading">
+    <section class="catalog-block" aria-labelledby="classicTitle">
+      <div class="catalog-heading">
         <div>
-          <span class="eyebrow">LICUADOS</span>
-          <h1 id="clasicosTitle">Clásicos</h1>
+          <span class="catalog-kicker">LICUADOS</span>
+          <h1 id="classicTitle">Clásicos</h1>
         </div>
-        <span class="section-price">desde $8.890</span>
+        <span class="catalog-heading__price">$8.890</span>
       </div>
-      <div class="product-grid" id="classicGrid"></div>
+      <div class="product-list" id="classicGrid"></div>
     </section>
 
-    <section class="ad-banner" aria-label="Espacio publicitario">
-      <div>
-        <span class="eyebrow">ESPACIO PUBLICITARIO</span>
-        <strong>Banner entre secciones</strong>
-        <small>El contenido final puede reemplazarse sin tocar el catálogo.</small>
-      </div>
-      <span class="banner-size">1200 × 300</span>
+    <section class="ad-slot ad-slot--compact" aria-label="Espacio publicitario">
+      <span>ESPACIO PUBLICITARIO</span>
+      <strong>Banner entre secciones</strong>
     </section>
 
-    <section class="catalog-section" aria-labelledby="combinadosTitle">
-      <div class="section-heading">
+    <section class="catalog-block" aria-labelledby="comboTitle">
+      <div class="catalog-heading">
         <div>
-          <span class="eyebrow">MEZCLAS</span>
-          <h2 id="combinadosTitle">Combinados</h2>
+          <span class="catalog-kicker">COMBINADOS</span>
+          <h2 id="comboTitle">Mezclas</h2>
         </div>
-        <span class="section-price">$9.230</span>
+        <span class="catalog-heading__price">$9.230</span>
       </div>
-      <div class="product-grid" id="comboGrid"></div>
+      <div class="product-list" id="comboGrid"></div>
     </section>
 
     <p class="empty-state" id="emptyState" hidden>No encontramos licuados con esa búsqueda.</p>
