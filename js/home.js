@@ -12,6 +12,7 @@
 
   const els = {
     categoriesTrack: document.getElementById("categoriesTrack"),
+    homeBannerTrack: document.getElementById("homeBannerTrack"),
     productsGrid: document.getElementById("productsGrid"),
     nearbyGrid: document.getElementById("nearbyGrid"),
     nearbySection: document.querySelector(".nearby-section"),
@@ -90,6 +91,59 @@
     showToast.timer = window.setTimeout(() => {
       els.toast.classList.remove("is-visible");
     }, 2100);
+  }
+
+
+  function initHomeBannerCarousel() {
+    const track = els.homeBannerTrack;
+    if (!track) return;
+
+    const slides = Array.from(track.querySelectorAll(".home-banner-slide"));
+    if (slides.length < 2) return;
+
+    let index = 0;
+    let timer = null;
+    let resumeTimer = null;
+
+    function goToSlide(nextIndex, behavior = "smooth") {
+      index = (nextIndex + slides.length) % slides.length;
+      track.scrollTo({
+        left: slides[index].offsetLeft,
+        behavior
+      });
+    }
+
+    function startRotation() {
+      window.clearInterval(timer);
+      timer = window.setInterval(() => {
+        goToSlide(index + 1);
+      }, 4500);
+    }
+
+    function pauseAndResume() {
+      window.clearInterval(timer);
+      window.clearTimeout(resumeTimer);
+      resumeTimer = window.setTimeout(startRotation, 6500);
+    }
+
+    track.addEventListener("pointerdown", pauseAndResume, { passive: true });
+    track.addEventListener("touchstart", pauseAndResume, { passive: true });
+    track.addEventListener("scroll", () => {
+      window.clearTimeout(track._snapTimer);
+      track._snapTimer = window.setTimeout(() => {
+        const nearest = slides.reduce((best, slide, slideIndex) => {
+          const distance = Math.abs(track.scrollLeft - slide.offsetLeft);
+          return distance < best.distance ? { index: slideIndex, distance } : best;
+        }, { index: 0, distance: Infinity });
+        index = nearest.index;
+      }, 120);
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      goToSlide(index, "auto");
+    });
+
+    startRotation();
   }
 
   function renderMenuCategories() {
@@ -413,6 +467,7 @@
     renderProducts();
     updateCartCount();
     wireEvents();
+    initHomeBannerCarousel();
 
     window.addEventListener(window.TheCampingCart.eventName, updateCartCount);
 
