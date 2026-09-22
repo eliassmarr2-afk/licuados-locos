@@ -121,7 +121,11 @@
         data-category="${category.id}"
         aria-pressed="${state.category === category.id}"
       >
-        <span class="category-card__icon">${iconSvg(category.id)}</span>
+        <span class="category-card__icon">
+          ${category.image
+            ? `<img src="${category.image}" alt="" loading="lazy" draggable="false" />`
+            : iconSvg(category.id)}
+        </span>
         <span class="category-card__label">${category.label}</span>
       </button>
     `).join("");
