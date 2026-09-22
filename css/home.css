@@ -855,9 +855,11 @@
 
 /* HOME BANNER CAROUSEL */
 .home-banner-carousel {
-  width: 100%;
+  width: auto;
   margin-top: 16px;
-  overflow: hidden;
+  margin-left: -24px;
+  margin-right: -24px;
+  overflow: visible;
 }
 
 .home-banner-track {
@@ -866,6 +868,9 @@
   width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
+  padding-left: 24px;
+  padding-right: 0;
+  scroll-padding-left: 24px;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   overscroll-behavior-x: contain;
@@ -877,7 +882,7 @@
 }
 
 .home-banner-slide {
-  flex: 0 0 100%;
+  flex: 0 0 calc(100% - 48px);
   min-width: 0;
   overflow: hidden;
   border-radius: 4px;
@@ -897,4 +902,20 @@
   box-shadow: none;
   user-select: none;
   -webkit-user-drag: none;
+}
+
+@media (max-width: 360px) {
+  .home-banner-carousel {
+    margin-left: -18px;
+    margin-right: -18px;
+  }
+
+  .home-banner-track {
+    padding-left: 18px;
+    scroll-padding-left: 18px;
+  }
+
+  .home-banner-slide {
+    flex-basis: calc(100% - 36px);
+  }
 }
