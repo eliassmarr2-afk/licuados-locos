@@ -42,7 +42,6 @@
     share: document.getElementById("shareButton"),
     reviewsButton: document.getElementById("reviewsButton"),
     readMoreButton: document.getElementById("readMoreButton"),
-    galleryButton: document.querySelector(".gallery-pill"),
     detailSection: document.querySelector(".detail-section"),
     toast: document.getElementById("toast"),
     phoneSupportButton: document.querySelector('.seller-actions button[aria-label="Consultar por teléfono"]'),
@@ -459,10 +458,6 @@
 
     els.reviewsButton.addEventListener("click", () => {
       showToast(`${product.rating} ★ · ${product.reviews} reseñas verificadas de ejemplo.`);
-    });
-
-    els.galleryButton.addEventListener("click", () => {
-      showToast("La galería completa se incorporará en la siguiente fase.");
     });
 
     els.phoneSupportButton.addEventListener("click", () => {
