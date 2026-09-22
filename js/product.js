@@ -14,12 +14,15 @@
 
   const categoryNames = {
     combinados: "Combinados",
-    banana: "Banana",
     frutilla: "Frutilla",
-    sandia: "Sandía",
-    durazno: "Durazno",
+    banana: "Banana",
+    mango: "Mango",
     manzana: "Manzana",
-    uvas: "Uvas"
+    naranja: "Naranja",
+    sandia: "Sandía",
+    melon: "Melón",
+    uvas: "Uvas",
+    durazno: "Durazno"
   };
 
   const els = {
