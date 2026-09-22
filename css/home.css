@@ -919,3 +919,59 @@
     flex-basis: calc(100% - 36px);
   }
 }
+
+
+/* MIX COMBINADOS — full-width horizontal rail */
+.mix-section {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.mix-section > .section-heading {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.section-heading__copy {
+  min-width: 0;
+}
+
+.section-heading__copy p {
+  margin: 4px 0 0;
+  color: #8f8f8f;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.mix-section .product-rail {
+  width: 100%;
+  margin-right: 0;
+  padding: 0 0 10px;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-padding-inline: 0;
+}
+
+.mix-section .product-card {
+  flex: 0 0 78%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+@media (max-width: 360px) {
+  .mix-section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .mix-section > .section-heading {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .mix-section .product-rail {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
