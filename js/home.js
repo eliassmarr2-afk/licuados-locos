@@ -296,7 +296,9 @@
 
   function renderProducts() {
     const filtered = getFilteredProducts();
-    const featured = filtered.slice(0, 3);
+    const featured = filtered
+      .filter((product) => product.category === "combinados")
+      .slice(0, 3);
     const ranked = [...filtered]
       .sort((a, b) => b.buyers - a.buyers)
       .slice(0, 3);
@@ -328,7 +330,7 @@
     });
 
     const hasProducts = filtered.length > 0;
-    els.productsGrid.closest(".products-section").hidden = !hasProducts;
+    els.productsGrid.closest(".products-section").hidden = featured.length === 0;
     els.nearbySection.hidden = !hasProducts;
     els.emptyState.hidden = hasProducts;
   }
