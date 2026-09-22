@@ -11,13 +11,15 @@
   const BLANK_IMAGE = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=";
 
   const categories = [
-    { id: "combinados", label: "Combinados", icon: "◌" },
-    { id: "banana", label: "Banana", icon: "◌" },
-    { id: "frutilla", label: "Frutilla", icon: "◌" },
-    { id: "sandia", label: "Sandía", icon: "◌" },
-    { id: "durazno", label: "Durazno", icon: "◌" },
-    { id: "manzana", label: "Manzana", icon: "◌" },
-    { id: "uvas", label: "Uvas", icon: "◌" }
+    { id: "frutilla", label: "Frutilla", image: "assets/images/secciones/frutilla.png" },
+    { id: "banana", label: "Banana", image: "assets/images/secciones/banana.png" },
+    { id: "mango", label: "Mango", image: "assets/images/secciones/mango.png" },
+    { id: "manzana", label: "Manzana", image: "assets/images/secciones/manzana.png" },
+    { id: "naranja", label: "Naranja", image: "assets/images/secciones/naranja.png" },
+    { id: "sandia", label: "Sandía", image: "assets/images/secciones/sandia.png" },
+    { id: "melon", label: "Melón", image: "assets/images/secciones/melon.png" },
+    { id: "uvas", label: "Uvas", image: "assets/images/secciones/uvas.png" },
+    { id: "durazno", label: "Durazno", image: "assets/images/secciones/durazno.png" }
   ];
 
   const products = [
