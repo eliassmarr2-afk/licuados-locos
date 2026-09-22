@@ -851,3 +851,50 @@
     padding-right: 0;
   }
 }
+
+
+/* HOME BANNER CAROUSEL */
+.home-banner-carousel {
+  width: 100%;
+  margin-top: 16px;
+  overflow: hidden;
+}
+
+.home-banner-track {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.home-banner-track::-webkit-scrollbar {
+  display: none;
+}
+
+.home-banner-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 4px;
+  background: transparent;
+  box-shadow: none;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.home-banner-slide img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1536 / 658;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+  box-shadow: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
