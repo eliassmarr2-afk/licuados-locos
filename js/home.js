@@ -148,21 +148,12 @@
 
   function renderMenuCategories() {
     els.menuCategories.innerHTML = state.categories.map((category) => `
-      <button type="button" data-menu-category="${category.id}">${category.label}</button>
+      <button type="button" data-menu-product="${category.productId}">${category.label}</button>
     `).join("");
 
-    els.menuCategories.querySelectorAll("[data-menu-category]").forEach((button) => {
+    els.menuCategories.querySelectorAll("[data-menu-product]").forEach((button) => {
       button.addEventListener("click", () => {
-        state.category = button.dataset.menuCategory;
-        state.query = "";
-        els.searchInput.value = "";
-        renderCategories();
-        renderProducts();
-        closeMenu();
-        document.getElementById("featuredTitle").scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
+        window.location.assign(`producto.html?id=${encodeURIComponent(button.dataset.menuProduct)}`);
       });
     });
   }
@@ -170,10 +161,10 @@
   function renderCategories() {
     els.categoriesTrack.innerHTML = state.categories.map((category) => `
       <button
-        class="category-card ${state.category === category.id ? "is-active" : ""}"
+        class="category-card"
         type="button"
-        data-category="${category.id}"
-        aria-pressed="${state.category === category.id}"
+        data-product-id="${category.productId}"
+        aria-label="Ver licuado de ${category.label}"
       >
         <span class="category-card__icon">
           ${category.image
@@ -184,12 +175,9 @@
       </button>
     `).join("");
 
-    els.categoriesTrack.querySelectorAll("[data-category]").forEach((button) => {
+    els.categoriesTrack.querySelectorAll("[data-product-id]").forEach((button) => {
       button.addEventListener("click", () => {
-        const nextCategory = button.dataset.category;
-        state.category = state.category === nextCategory ? "all" : nextCategory;
-        renderCategories();
-        renderProducts();
+        window.location.assign(`producto.html?id=${encodeURIComponent(button.dataset.productId)}`);
       });
     });
   }
