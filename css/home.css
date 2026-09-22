@@ -801,24 +801,53 @@
 }
 
 
-/* Full-bleed horizontal category rail: preserve card alignment while allowing
-   the scroll viewport to reach the real phone edges. */
-.categories-track {
-  margin-left: -24px;
-  margin-right: -24px;
+
+/* CATEGORIES FULL-WIDTH RAIL
+   The category carousel owns the entire phone width. The heading keeps the
+   normal page gutter, but the scrolling viewport itself has no lateral gutter. */
+.categories-section {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.categories-section > .section-heading {
   padding-left: 24px;
   padding-right: 24px;
-  scroll-padding-left: 24px;
-  scroll-padding-right: 24px;
+}
+
+.categories-track {
+  width: 100%;
+  margin: 0;
+  padding: 2px 0 4px;
+  grid-auto-columns: calc((100% - 30px) / 4);
+  gap: 10px;
+  overflow-x: auto;
+  scroll-padding-inline: 0;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.category-card {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 @media (max-width: 360px) {
-  .categories-track {
-    margin-left: -18px;
-    margin-right: -18px;
+  .categories-section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .categories-section > .section-heading {
     padding-left: 18px;
     padding-right: 18px;
-    scroll-padding-left: 18px;
-    scroll-padding-right: 18px;
+  }
+
+  .categories-track {
+    grid-auto-columns: calc((100% - 24px) / 4);
+    gap: 8px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
