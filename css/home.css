@@ -799,3 +799,26 @@
 .card-add-button:active {
   transform: scale(.95);
 }
+
+
+/* Full-bleed horizontal category rail: preserve card alignment while allowing
+   the scroll viewport to reach the real phone edges. */
+.categories-track {
+  margin-left: -24px;
+  margin-right: -24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  scroll-padding-left: 24px;
+  scroll-padding-right: 24px;
+}
+
+@media (max-width: 360px) {
+  .categories-track {
+    margin-left: -18px;
+    margin-right: -18px;
+    padding-left: 18px;
+    padding-right: 18px;
+    scroll-padding-left: 18px;
+    scroll-padding-right: 18px;
+  }
+}
